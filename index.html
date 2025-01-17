@@ -89,11 +89,10 @@
         let value = parseFloat(input.value) || 0;
         total += value;
       });
-      // Apply 0.5kg cut per item
-      const itemCut = numItems * 0.5;
+      
       // Apply 5kg cut per 100kg
       const weightCut = Math.floor(total / 100) * 5;
-      const finalTotal = total - itemCut - weightCut;
+      const finalTotal = total - weightCut;
       document.getElementById('totalQuantity').innerText = finalTotal.toFixed(2);
     }
   </script>
